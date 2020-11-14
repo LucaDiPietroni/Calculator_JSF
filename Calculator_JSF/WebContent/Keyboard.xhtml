@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<head>
+
+<meta content="charset=UTF-8"/>
+
+<link rel="stylesheet" href="bootstrap.min.css" />
+
+<title>Insert title here</title>
+
+<style>
+.button {width: 100px;
+		height: 100px;
+		font-size: 40px;
+		margin: 5px;
+		cursor: pointer;
+		border: none;
+		background-color:#{styleBean.keyColor};
+		font-family:#{styleBean.fontFamily};
+}
+
+body {
+	background-color:#{styleBean.backgroundColor}
+}
+		
+</style>
+
+</head>
+<body>
+	<div class="container">
+		<h:form name="form">
+			<table>
+				<tr>
+					<td colspan="3"><h:inputText style="width:330px;height:98px;margin:5px;background-color:#{styleBean.resultBackgroundColor};color:#{styleBean.resultColor};font-size:30px;font-family:#{styleBean.fontFamily};" value="#{calculatorBean.visibleValue}" disabled="true"/></td>
+					<td><h:commandButton class = "button" value="C" action = "#{calculatorBean.clearVisibleValue}"/></td>
+					<td><h:commandButton class = "button" value="S" action = "#{calculatorBean.goPropertiesMenu}"/></td>
+				</tr>
+				<tr>
+					<td><h:commandButton class = "button" value="7" action = "#{calculatorBean.numberPressed('7')}"/></td>
+					<td><h:commandButton class = "button" value="8" action = "#{calculatorBean.numberPressed('8')}"/></td>
+					<td><h:commandButton class = "button" value="9" action = "#{calculatorBean.numberPressed('9')}"/></td>
+					<td><h:commandButton class = "button" value="/" action = "#{calculatorBean.signPressed('/')}"/></td>
+					<td><h:commandButton class = "button" value="√" action = "#{calculatorBean.squarePressed}"/></td>
+				</tr>
+				<tr>
+					<td><h:commandButton class = "button" value="4" action = "#{calculatorBean.numberPressed('4')}"/></td>
+					<td><h:commandButton class = "button" value="5" action = "#{calculatorBean.numberPressed('5')}"/></td>
+					<td><h:commandButton class = "button" value="6" action = "#{calculatorBean.numberPressed('6')}"/></td>
+					<td><h:commandButton class = "button" value="*" action = "#{calculatorBean.signPressed('*')}"/></td>
+					<td><h:commandButton class = "button" value="%" action = "#{calculatorBean.signPressed('%')}"/></td>
+				</tr>
+				<tr>
+					<td><h:commandButton class = "button" value="1" action = "#{calculatorBean.numberPressed('1')}"/></td>
+					<td><h:commandButton class = "button" value="2" action = "#{calculatorBean.numberPressed('2')}"/></td>
+					<td><h:commandButton class = "button" value="3" action = "#{calculatorBean.numberPressed('3')}"/></td>
+					<td><h:commandButton class = "button" value="-" action = "#{calculatorBean.signPressed('-')}"/></td>
+					<td rowspan="2"><h:commandButton class = "button" style="height:216px" value="=" action = "#{calculatorBean.equalPressed}"/></td>
+				</tr>
+				<tr>
+					<td><h:commandButton class = "button" value="0" action = "#{calculatorBean.numberPressed('0')}"/></td>
+					<td><h:commandButton class = "button" value="." action = "#{calculatorBean.dotPressed('.')}"/></td>
+					<td><h:commandButton class = "button" value="+/-" action = "#{calculatorBean.plusMinusChanger}"/></td>
+					<td><h:commandButton class = "button" value="+" action = "#{calculatorBean.signPressed('+')}"/></td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
+</body>
+</html>

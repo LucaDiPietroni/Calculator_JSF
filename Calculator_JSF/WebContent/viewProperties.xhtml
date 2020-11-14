@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+
+<meta content="charset=UTF-8" />
+
+<link rel="stylesheet" href="bootstrap.min.css" />
+
+<title>Insert title here</title>
+
+<style>
+.button {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	font-family: #{styleBean.fontFamily};
+}
+
+p {
+	margin: 0px;
+	line-spacing: single;
+	align: center;
+}
+
+body {
+	font-size: 20px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	background-color: #{styleBean.backgroundColor};
+	font-family: #{styleBean.fontFamily};
+}
+
+</style>
+
+</head>
+<body>
+	<h:form>
+		<div style="text-align: center; font-size:50px;">Ustawienia
+			graficzne kalkulatora</div>
+		<br />
+
+		<div>
+			<table style="margin: auto;background-color:DarkGrey;">
+				<tr>
+					<td style="width: 200px; text-align: center;">Kolor tła</td>
+					<td style="width: 200px; text-align: center;">Kolor klawiszy</td>
+					<td style="width: 200px; text-align: center;">Kolor tła wyniku</td>
+					<td style="width: 200px; text-align: center;">Kolor wyniku</td>
+				</tr>
+				<tr>
+					<td>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:LightYellow;#{styleBean.borderBackgroundActivate(1)}"
+								action="#{styleBean.setBackgroundColor('LightYellow', 1)}" />
+							<h:commandButton class="button"
+								style="background-color:grey;#{styleBean.borderBackgroundActivate(2)}"
+								action="#{styleBean.setBackgroundColor('grey', 2)}" />
+						</p>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:LightSalmon;#{styleBean.borderBackgroundActivate(3)}"
+								action="#{styleBean.setBackgroundColor('LightSalmon', 3)}" />
+							<h:commandButton class="button"
+								style="background-color:pink;#{styleBean.borderBackgroundActivate(4)}"
+								action="#{styleBean.setBackgroundColor('pink', 4)}" />
+						</p>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:LightBlue;#{styleBean.borderBackgroundActivate(5)}"
+								action="#{styleBean.setBackgroundColor('LightBlue', 5)}" />
+							<h:commandButton class="button"
+								style="background-color:LightGreen;#{styleBean.borderBackgroundActivate(6)}"
+								action="#{styleBean.setBackgroundColor('LightGreen', 6)}" />
+						</p>
+					</td>
+					<td>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:yellow;#{styleBean.borderKeyActivate(1)}"
+								action="#{styleBean.setKeyColor('yellow', 1)}" />
+							<h:commandButton class="button"
+								style="background-color:grey;#{styleBean.borderKeyActivate(2)}"
+								action="#{styleBean.setKeyColor('grey', 2)}" />
+						</p>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:orange;#{styleBean.borderKeyActivate(3)}"
+								action="#{styleBean.setKeyColor('orange', 3)}" />
+							<h:commandButton class="button"
+								style="background-color:red;#{styleBean.borderKeyActivate(4)}"
+								action="#{styleBean.setKeyColor('red', 4)}" />
+						</p>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:blue;#{styleBean.borderKeyActivate(5)}"
+								action="#{styleBean.setKeyColor('blue', 5)}" />
+							<h:commandButton class="button"
+								style="background-color:green;#{styleBean.borderKeyActivate(6)}"
+								action="#{styleBean.setKeyColor('green', 6)}" />
+						</p>
+					</td>
+					<td>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:LightYellow;#{styleBean.borderResultBackgroundActivate(1)}"
+								action="#{styleBean.setResultBackgroundColor('LightYellow', 1)}" />
+							<h:commandButton class="button"
+								style="background-color:grey;#{styleBean.borderResultBackgroundActivate(2)}"
+								action="#{styleBean.setResultBackgroundColor('grey', 2)}" />
+						</p>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:LightSalmon;#{styleBean.borderResultBackgroundActivate(3)}"
+								action="#{styleBean.setResultBackgroundColor('LightSalmon', 3)}" />
+							<h:commandButton class="button"
+								style="background-color:pink;#{styleBean.borderResultBackgroundActivate(4)}"
+								action="#{styleBean.setResultBackgroundColor('pink', 4)}" />
+						</p>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:LightBlue;#{styleBean.borderResultBackgroundActivate(5)}"
+								action="#{styleBean.setResultBackgroundColor('LightBlue', 5)}" />
+							<h:commandButton class="button"
+								style="background-color:LightGreen;#{styleBean.borderResultBackgroundActivate(6)}"
+								action="#{styleBean.setResultBackgroundColor('LightGreen', 6)}" />
+						</p>
+					</td>
+					<td>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:yellow;#{styleBean.borderResultActivate(1)}"
+								action="#{styleBean.setResultColor('yellow', 1)}" />
+							<h:commandButton class="button"
+								style="background-color:grey;#{styleBean.borderResultActivate(2)}"
+								action="#{styleBean.setResultColor('grey', 2)}" />
+						</p>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:orange;#{styleBean.borderResultActivate(3)}"
+								action="#{styleBean.setResultColor('orange', 3)}" />
+							<h:commandButton class="button"
+								style="background-color:red;#{styleBean.borderResultActivate(4)}"
+								action="#{styleBean.setResultColor('red', 4)}" />
+						</p>
+						<p align="center">
+							<h:commandButton class="button"
+								style="background-color:blue;#{styleBean.borderResultActivate(5)}"
+								action="#{styleBean.setResultColor('blue', 5)}" />
+							<h:commandButton class="button"
+								style="background-color:green;#{styleBean.borderResultActivate(6)}"
+								action="#{styleBean.setResultColor('green', 6)}" />
+						</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br />
+
+		<div align="center">
+			Czcionka <br /> <br /> 
+			<h:selectOneMenu value="#{styleBean.fontFamily}" style="margin: auto; width: 250px; font-size: 20px;" onchange="submit()">
+				<f:selectItem itemValue="Calibri" itemLabel="Calibri"/>
+				<f:selectItem itemValue="TimesNewRoman" itemLabel="TimesNewRoman"/>
+				<f:selectItem itemValue="Arial" itemLabel="Arial"/>
+				<f:selectItem itemValue="Verdana" itemLabel="Verdana"/>
+				<f:selectItem itemValue="Courier New" itemLabel="Courier New"/>
+			</h:selectOneMenu>
+		</div>
+		<br />
+
+		<div align="center">
+		<p>
+			<h:commandButton value="Przywróc wygląd domyślny" action="#{styleBean.defaultStyle}" />
+			<h:commandButton value="Wróć" action="#{styleBean.goBack}" />
+		</p>
+		</div>
+
+	</h:form>
+
+</body>
+</html>
